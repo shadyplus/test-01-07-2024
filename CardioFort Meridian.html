@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&lnk=74142 -->
+<html lang="iq" dir="rtl" data-lt-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script src="./CardioFort Meridian_files/jquery.min.js.download"></script>
+
+    <script>
+    function set_validator_errors(){
+        orderValidator.errorTitle = 'يرجى تصحيح الأخطاء التالية'; 
+
+        orderValidator.errorNameField = 'الاسم'; 
+        orderValidator.errorNameMess = 'أدخل أسمك'; 
+        
+        orderValidator.errorPhoneField = 'رقم التليفون'; 
+        orderValidator.errorPhoneMess = 'أدخل رقم الهاتف الصحيح'; 
+        
+        orderValidator.errorAddress = 'أدخل العنوان الصحيح'; 
+        orderValidator.errorRequired = 'يتطلب حقلا'; 
+        orderValidator.errorMaxLength = 'حرف {1} بحد أقصى صالح'; 
+        orderValidator.errorMinLength = 'الحد الأدنى لعدد حروف {1}'; 
+        orderValidator.errorEmailField = 'البريد الإلكتروني';
+        orderValidator.errorEmail = 'تم تحديد بريد إلكتروني غير صالح';
+        }
+    </script>
+    
+<script>
+
+
+window.app = {
+    timestamp: parseInt((new Date()).getTime() / 1000),
+    jq: jQuery,
+    formAction: window.location.href,
+    leadToken: '66827aafe90ae0.67598940',
+    offers: {"40193":{"id":40193,"country":{"code":"DZ","name":"\u0410\u043b\u0436\u0438\u0440"},"price":"5999","price2":"19000","currency":{"code":"DZD","name":"DA"},"discount":"","delivery_price":"","link":"","product_sku":"","prepaid_info_html":""}},
+    currentOffer: {"id":40193,"country":{"code":"DZ","name":"\u0410\u043b\u0436\u0438\u0440"},"price":"5999","price2":"19000","currency":{"code":"DZD","name":"DA"},"discount":"","delivery_price":"","link":"","product_sku":"","prepaid_info_html":""},
+    allowedCountries: ["DZ"],
+    _setOfferId: false,
+    streamHid: '',
+    showcaseUrl: '',
+    disablePhoneMask: Boolean(),
+    
+    setOffer: function (offerId) {
+        if (offerId == this._setOfferId) {
+            return ;
+        }
+        this._setOfferId = offerId;
+        if (offerId) {
+            var offer = app.offers[offerId];
+            var previousOffer = app.currentOffer;
+            app.currentOffer = offer;
+            var event = this.jq.Event("offerchange");
+            event.previousOffer = previousOffer;
+            event.currentOffer = app.currentOffer;
+            this.jq(document).trigger(event);
+            this.updatePage(offer);
+        } else {
+            $('input[name=country]').val('');
+        }
+    },
+    
+    updatePage: function(offer) {
+        $('x-newprice').html(offer.price);
+        $('x-oldprice').html(offer.price2);
+        $('x-currency').html(offer.currency.name);
+        $('input[name=offer], select[name=offer]').val(offer.id);
+        $('input[name=country]').val(offer.country.code);
+    },
+
+    blockForm: function() {
+        // Блокируем кнопки при отправке формы
+        $('input[type=submit]', $(this)).prop( 'disabled', true ).attr( 'disabled', true );
+        $('button', $(this)).prop( 'disabled', true ).attr( 'disabled', true );
+        app.incompleteOrder.lock = true;
+        clearTimeout(app.incompleteOrder.timer);
+    },
+
+    unblockForm: function() {
+        $('input[type=submit]', $(this)).prop( 'disabled', false ).attr( 'disabled', false );
+        $('button[type=submit]', $(this)).prop( 'disabled', false ).attr( 'disabled', false );
+        app.incompleteOrder.lock = false;
+        clearTimeout(app.incompleteOrder.timer);
+    }
+
+};
+
+
+</script><script src="./CardioFort Meridian_files/form.validate.js.download"></script>
+<script src="./CardioFort Meridian_files/interPhoneCodes.js.download"></script>
+<script src="./CardioFort Meridian_files/showcase.js.download"></script>
+<script src="./CardioFort Meridian_files/form.incomplete.js.download"></script>
+<script src="./CardioFort Meridian_files/main2.js.download"></script>
+
+
+
+
+
+  <!--<base>--><base href=".">
+  <meta name="robots" content="noindex">
+  
+  <title>CardioFort Meridian</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="./CardioFort Meridian_files/mediconewsvtuj.webflow.c8a2c15bc.css" rel="stylesheet" type="text/css">
+  <link href="https://cardiofortdz.xcartpro.com/r26/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link rel="stylesheet" href="./CardioFort Meridian_files/comm.css" type="text/css">
+  <link rel="stylesheet" href="./CardioFort Meridian_files/pp.css">
+    <link rel="stylesheet" href="./CardioFort Meridian_files/boxes.css" type="text/css">
+  <script src="./CardioFort Meridian_files/jquery-3.6.0.min.js.download" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- <script defer src="js/tooltips.js"></script> -->
+
+  <style>
+    .hide,
+    .flag-dropdown {
+      display: none;
+    }
+
+    .error-box {
+      color: #fff;
+      background-color: #DE5042;
+      border-radius: 5px;
+      text-align: center;
+      width: 240px;
+      font-size: 13px;
+      line-height: 20px;
+      margin: 5px auto !important;
+      z-index: 100;
+    }
+
+    Input:invalid {
+      box-shadow: none
+    }
+  </style>
+
+</head>
+<body>
+  <div class="section__1">
+    <div class="section"><a href="https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&amp;lnk=74142#" class="link">
+      RENCONTRE</a></div>
+    <div class="container w-container">
+
+      <div class="div-block">
+        <div class="heading"><strong style="font-size: 38px"> Quelles sont les meilleures solutions pour les vaisseaux sanguins obstrués et qui est le meilleur ami des vaisseaux sanguins ?</strong>
+
+        </div>
+        <div class="text-block-16"><strong><em>Vos jambes gonflent-elles la nuit ? Avez-vous des chevilles enflées ? Cela signifie que vous avez beaucoup de liquide dans vos vaisseaux: le liquide traverse les parois affaiblies et obstruées des vaisseaux sanguins dans les tissus. Les ballonnements s'accompagnent de douleurs musculaires et de crampes causées par une altération de la circulation sanguine.
+        </em></strong></div>
+      </div>
+      <div class="text-block data1">
+        <script type="text/javascript">
+          var d = new Date();
+          var day = d.getDate();
+          var month = d.getMonth() + 1;
+          var year = d.getFullYear();
+          document.write(day + "." + month + "." + year);
+        </script>1.7.2024
+      </div>
+      <p class="paragraph">Tout le monde sait que les accidents vasculaires cérébraux et les crises cardiaques sont causés par l'accumulation de cholestérol dans les vaisseaux sanguins. C'est la cause des maladies cardiovasculaires. Cependant, peu de gens réalisent que ce n'est que la pointe de l'iceberg. Les artères obstruées sont la cause de 9 maladies chroniques sur 10 considérées comme incurables.
+        <br>‍<br>
+        Maux de tête et augmentation soudaine de la pression artérielle. Il vous est difficile de tourner ou d'incliner votre cou. Les jambes gonflent la nuit, le visage gonfle le matin. bourdonnement dans l'oreille Engourdissement des orteils et gel des mains et des pieds. La vision est faible. La mémoire se détériore. Vous n'avez pas assez de force et d'énergie pour quoi que ce soit. Beaucoup de gens disent que ce sont des signes de vieillissement. Mais ce n'est pas vrai.      </p>
+      <div class="div-block-2">
+        <div class="div-block-3"><img src="./CardioFort Meridian_files/60326a4965fa673a4f686023_5eddfdf0ad2c2afcfb7139e6_5e5951628870165244d16c2d_br.png" alt="" class="image">
+          <div class="text-block-2">Pourquoi la santé vasculaire est-elle responsable de 90 % de votre santé ?
+          </div>
+        </div>
+        <div class="div-block-3"><img src="./CardioFort Meridian_files/60326a4965fa673a4f686023_5eddfdf0ad2c2afcfb7139e6_5e5951628870165244d16c2d_br.png" alt="" class="image">
+          <div class="text-block-2">Outre le cholestérol, qu'est-ce qui se dépose sur les parois des vaisseaux sanguins ?
+          </div>
+        </div>
+        <div class="div-block-3"><img src="./CardioFort Meridian_files/60326a4965fa673a4f686023_5eddfdf0ad2c2afcfb7139e6_5e5951628870165244d16c2d_br.png" alt="" class="image">
+          <div class="text-block-2">&gt;4 signes évidents de vaisseaux sanguins malsains et 7 autres signes cachés
+          </div>
+        </div>
+        <div class="div-block-3"><img src="./CardioFort Meridian_files/60326a4965fa673a4f686023_5eddfdf0ad2c2afcfb7139e6_5e5951628870165244d16c2d_br.png" alt="" class="image">
+          <div class="text-block-2"><strong><em>Comment prendre soin de la santé des vaisseaux sanguins en toute sécurité sans aller chez le médecin ?
+          </em></strong></div>
+        </div>
+      </div>
+      <div class="text-block-3"><em class="italic-text">Nous avons reçu une réponse à ces questions du Chef du Service de Chirurgie Vasculaire à l'Université de Médecine et de Pharmacie d'Algérie, Professeur, Neurochirurgien, Docteur Kazem Ali Abdelmajid.
+      </em></div><img src="./CardioFort Meridian_files/60326a4965fa67d82c68602f_5eddfdf0ad2c2ab7487139ca_5e59516288701670f1d16c32_5e5187181635de182abb7b62_4-p-500.jpg" width="639" alt="" class="ma">
+      <p class="paragraph"><strong>Le professeurKazem Ali Abdelmajid a pratiqué plus de 19 200 chirurgies cérébrales. Le plus jeune patient n'avait que deux jours.
+        <em>
+            <br><br></em></strong>
+        <em>Le professeur Kazem Ali Abdelmajid a le talent d'expliquer des processus complexes avec des mots simples. Il a écrit 48 livres et manuels qui sont compréhensibles pour les personnes sans formation médicale. Il est convaincu que les vaisseaux sanguins sont responsables de 90 % de notre santé et que notre bien-être dépend de leur propreté.
+        </em></p>
+      <h2 class="heading-2"><strong>Pourquoi les vaisseaux sanguins représentent 90 % de notre santé ?
+      </strong>
+    </h2>
+      <p class="paragraph"><strong>Professeur, Vous avez dit à plusieurs reprises que les vaisseaux sanguins sont responsables de 90 % de la santé du corps. Pourquoi?
+        <br>
+      </strong>
+        <br>Quel est le plus grand organe du corps humain ? Peu de gens connaissent la réponse. Même ceux qui étudient la médecine se trompent. Certains mentionnent le cerveau et le foie. Les gens les plus intelligents disent la peau. Mais en fait, c'est le système vasculaire.
+      </p>
+      <div class="text-block-4"><strong>La longueur des vaisseaux sanguins pourrait envelopper la planète deux fois et demie
+      </strong>
+    </div>
+      <div class="text-block-5">
+        <strong><em>Et la on parle des vaisseaux sanguins d'une seule personne
+      </em>
+    </strong>
+    </div>
+      <img src="./CardioFort Meridian_files/60326a4965fa671b0f68603b_5eddfdf0ad2c2aa2f37139c3_5e558a6caacc1f50a3a007b5_s_3.jpg" width="401" alt="" class="ma">
+      <p class="paragraph bp"><strong>imagine seulement. Si nous prenons tous les vaisseaux du corps humain et les connectons, cela fera environ 100 000 km de long.
+      </strong></p>
+      <p class="paragraph"><strong> La longueur de l'équateur est de 40 000 km.</strong>  Par conséquent, nous pouvons envelopper la planète deux fois et demie avec des vaisseaux sanguins humains.
+        <br><br> Les vaisseaux sanguins ne sont pas seulement des tubes qui transportent le sang. C'est un organe unique et complexe et tout dommage provoque une maladie.
+        <br><br>
+        <strong><em>Blocage des vaisseaux sanguins dans les jambes.</em></strong> - des varices, des oedèmes, une sensation de lourdeur, de froid ou au contraire une forte sensation de brûlure au niveau des pieds.<em> Talons secs et craquelés. Déséquilibre du flux sanguin - la protection contre les bactéries disparaît, des champignons apparaissent. Les ongles se cassent
+ <br></em><br>
+        <strong><em>Blocage des vaisseaux sanguins qui irriguent le foie. </em></strong>  Changement graisseux hépatique. Lorsque vous mangez des aliments mentaux, votre bouche a un goût aigre.<em> 
+          <br></em><br>
+        <strong><em>Faiblesse et blocage des vaisseaux sanguins qui alimentent les articulations. </em></strong><em>Dommages cartilagineux. Douleurs articulaires, ostéochondrose, apparition de hernie.  <br></em><br>
+        <strong><em> Lorsque les vaisseaux sanguins perdent leur élasticité, des hémorroïdes apparaissent.<br></em><br>
+        <strong><em> Dysfonctionnement des vaisseaux dans l'œil - provoquant une vision double. assombrissement du cristallin. Les yeux rouges, dont on pense toujours qu'ils sont dus à l'épuisement, sont en réalité des micro-hémorragies, des fissures dans les minuscules capillaires des yeux.
+          <br></em><br>
+        <strong><em>Troubles circulatoires dans le cerveau. </em></strong><em>Vertiges, acouphènes et perte de mémoire. Êtes-vous déjà allé à la cuisine et avez-vous oublié ce dont vous avez besoin? ou l'incapacité de se souvenir d'un mot. Ce sont des signes d'une détérioration de l'état des vaisseaux cérébraux. </em></strong></strong></p><strong><strong>
+      <p class="paragraph bp"><strong>Et bien sûr, l'hypertension artérielle contribue à cette liste. Hypertension artérielle: C'est l'une des causes des accidents vasculaires cérébraux et des crises cardiaques
+      </strong></p>
+      <p class="paragraph">Les vaisseaux sanguins sont notre source d'énergie et la vie les traverse. Si cette voie importante est bloquée, la vie s'arrêtera.
+        <br><br><strong>Le blocage des vaisseaux sanguins signifie une nutrition insuffisante de tous les organes.
+          <br></strong>
+        <br>
+        <strong>Le surpoids est directement lié aux vaisseaux sanguins.</strong>Les vaisseaux sanguins obstrués par le cholestérol affament les organes et ne fournissent pas la quantité nécessaire de nutriments. Le cerveau envoie le message : « Vous devez manger. Alors vous allez automatiquement manger. Mais les organes ne reçoivent toujours pas la quantité requise de nutriments en raison du blocage des vaisseaux sanguins. Le cerveau lui répète qu'il doit manger, et cela se répète indéfiniment.<br><br>
+        <strong>Le corps a besoin de calories - d'où la sensation constante de faim et les envies d'aliments sucrés - le corps a besoin de calories.
+          <br></strong>
+        <br>
+        Lorsque mes collègues disent aux patients : « vous êtes hypertendu  parce que vous êtes en surpoids », ils confondent la cause et l'effet. L'hypertension artérielle n'est pas causée par le surpoids, bien au contraire.</p>
+      <p class="paragraph bp"><strong>Il est impossible d'être en bonne santé et heureux sans vaisseaux sanguins sains.
+      </strong></p>
+      <p class="paragraph">C'est pourquoi je dis tout le temps : si vous voulez une vie normale, nettoyez et restaurez vos vaisseaux sanguins. Le nettoyage des vaisseaux sanguins vous sauvera de 90% des maladies chroniques, dont certaines sont considérées comme "incurables".
+      </p>
+      <h2 class="heading-2"><strong>Qu'est-ce qui obstrue les vaisseaux sanguins à part le cholestérol ?
+      </strong></h2>
+      <p class="paragraph"><strong>Nous savons tous à quel point le cholestérol est dangereux. Il obstrue les vaisseaux sanguins, ce qui les rend plus minces et affecte la circulation sanguine. Mais il n'est pas le seul à boucher cette circulation.
+        <br></strong></p><img src="./CardioFort Meridian_files/60326a4965fa675d5a686028_5eddfdf0ad2c2a08717139c7_5e558a6caacc1f34b8a007c9_tr_3.jpg" width="415" alt="" class="image-2">
+      <div class="text-block-4"><strong>6,3 kg
+      </strong></div>
+      <div class="text-block-5"><strong><em>C'est le poids total des impuretés qui se sont accumulées dans les vaisseaux sanguins pendant 55 ans.
+      </em></strong></div>
+      <h2 class="heading-2"><strong>cholestérol
+      </strong></h2>
+      <p class="paragraph">C'est la vérité. Les dépôts de cholestérol ou "athérosclérose" représentent environ 65 à 70% des impuretés dans les vaisseaux.
+      </p>
+      <p class="paragraph bp"><strong>Ces dépôts mettent la vie en danger et provoquent une hypertension artérielle, des maux de tête et de dos, de la faiblesse et de l'apathie. Beaucoup plus dangereuse est la masse de caillots sanguins qui s'accumulent dans les vaisseaux sanguins.
+      </strong></p>
+      <h2 class="heading-2"><strong>poids du caillot
+      </strong></h2>
+      <p class="paragraph">La masse de caillots sanguins qui s'accumulent dans les vaisseaux est bien inférieure<strong>à environ 800 g - 1 kg. </strong>Cependant, son danger réside dans son instabilité. Le caillot de sang peut se détacher à tout moment et se déplacer dans la circulation sanguine.
+        <br>‍<br>L'AVC est : le blocage des vaisseaux sanguins dans le cerveau. Une crise cardiaque est : un blocage dans une artère coronaire. Ischémie hépatique, collapsus pulmonaire, insuffisance rénale. Les hémorroïdes ne sont rien de plus qu'une ischémie rectale. L'obstruction des petits vaisseaux sanguins des pieds finit par entraîner une nécrose : la gangrène.
+      </p>
+      <h2 class="heading-2"><strong>Poids du sel
+      </strong></h2>
+      <p class="paragraph">Les sels de calcium dans les vaisseaux sanguins sont des résidus chimiques de médicaments et d'additifs alimentaires. Vers l'âge de 50 ans, il accumule de 300 à 400 g. La plus grande quantité de sels de calcium s'accumule dans les vaisseaux du cerveau. Les sels de calcium sont dangereux en raison de leur structure cristalline. Une contraction soudaine causée par le stress, l'exercice ou les conditions météorologiques provoque un spasme d'un vaisseau sanguin, provoquant la rupture d'un vaisseau sanguin dans le cerveau et entraînant un accident vasculaire cérébral hémorragique.
+      </p>
+      <h2 class="heading-2"><strong>4 signes évidents de vaisseaux sanguins malsains et 7 autres signes cachés
+      </strong></h2>
+      <p class="paragraph"><strong>Quels sont les symptômes qui indiquent le blocage de nos vaisseaux sanguins ? Comment reconnaître le signal du corps: "Nettoyez d'urgence les vaisseaux sanguins"?
+        <br>‍</strong><br>Si vous avez plus de 45 ans et que vous n'avez jamais pris de nutriments pour nettoyer les vaisseaux sanguins, je vous assure que vous avez des problèmes avec eux.
+        <br></p>
+      <div class="text-block-4"><strong>45 ans  </strong></div>
+      <div class="text-block-5"><strong><em>à cet âge , il est nécessaire de nettoyer les vaisseaux sanguins.
+      </em></strong></div>
+      <p class="paragraph">Le blocage des vaisseaux sanguins accompagné de cholestérol et de caillots sanguins est en fait un processus naturel de vieillissement. Le fastfood, les medicaments, le tabagisme et l'alcool accélèrent le processus de 6 à 8 fois. C'est la vérité que nous vivons et nous ne pouvons pas la nier.
+        <br>‍<br><strong>C'est le principal signe d'occlusion vasculaire.
+          <br>‍</strong><br>Si on vous diagnostique une hypertension artérielle, vous pouvez arrêter de chercher des symptômes car c'est la reine des maladies vasculaires
+          <br>Avez-vous des problèmes de tension artérielle ? Souffrez-vous toujours d'hypertension artérielle et avez-vous besoin de prendre des médicaments ? Alors vous devez savoir que seulement 30% de vos vaisseaux sanguins fonctionnent bien. Le reste est composé de plaques de cholestérol, de caillots sanguins et de sels de calcium.
+          <br>‍<br>Par conséquent, même le moindre stress, changement de temps et orages magnétiques affectent immédiatement l'état de santé. Vous souffrez d'hypertension artérielle, de maux de tête sévères, de douleurs articulaires.
+          <br>‍<br><strong>4 maladies causées par le blocage des vaisseaux sanguins :
+          </strong>
+      </p>
+      <ul role="list">
+        <li class="list-item"><strong>1. Hypertension artérielle.
+          <br></strong><span class="si"><strong>Une tension artérielle élevée ou instable, qui vous oblige à réduire vos efforts et votre nervosité. Avez-vous reçu un diagnostic d'hypertension artérielle? Les vaisseaux sanguins attendent d'être nettoyés !
+          </strong></span></li>
+        <li class="list-item"><strong>2. Varices
+          <br></strong><span class="si"><strong>Veines gonflées et de mauvaise apparence dans les jambes, sensation de lourdeur et de douleur, ballonnements. Le cholestérol résiduel et les caillots sanguins bloquent les valves veineuses. Des « astérisques » vasculaires apparaissent progressivement, devenant finalement un « maillage » vasculaire. C'est ainsi que se développent les varices.
+          </strong></span></li>
+        <li class="list-item"><strong>3. Hémorroïdes.
+          <br></strong><span class="si"><strong>Le blocage des vaisseaux sanguins dans le rectum entraîne une hypertrophie des hémorroïdes. La plaque des vaisseaux sanguins qui irriguent le sang contribue aux fissures anales.
+          </strong></span></li>
+        <li class="list-item"><strong>4. Ostéochondrose.<br></strong><span class="si"><strong>Mauvaise circulation sanguine dans le cartilage. Le cartilage durcit et s'use, et ils n'ont pas le temps de récupérer. Il ne se régénère pas et ne se dessèche pas. Ils perdent leurs propriétés d'absorption des chocs. Les sels ne sont pas lessivés et s'accumulent de manière incontrôlable.
+        </strong></span></li>
+      </ul>
+      <p class="paragraph"><strong>7 symptômes cachés :
+      </strong></p>
+      <ul role="list">
+        <li class="list-item"><strong>1. Gonflement.
+          <br></strong><span class="si"><strong>Les vaisseaux sanguins obstrués ne peuvent pas pomper le sang. Altération du métabolisme des solutions salines. La nuit, les jambes sont tellement enflées que les chaussettes laissent des marques profondes sur les chevilles. Gonflement du visage et poches sous les yeux. Les bagues ne peuvent pas être retirées des doigts. Le gonflement est un signe de gonflement des organes internes.
+          </strong></span><strong><br></strong>
+        </li>
+      </ul>
+      <ul role="list">
+        <li class="list-item"><strong>2. Acouphènes.
+          <br></strong><span class="si"><strong>Des sons faibles aux hurlements bruyants qui rendent la concentration difficile. Cela est dû à une pression accrue dans les vaisseaux cérébraux fonctionnant sur le tympan.
+          </strong></span></li>
+      </ul>
+      <ul role="list">
+        <li class="list-item"><strong>3. Vertiges.
+          <br></strong><span class="si"><strong>La sensation "d'intoxication", les crises soudaines de vertiges indiquent que le système immunitaire est affamé. Elle s'accompagne souvent d'une déficience auditive.
+          </strong></span></li>
+      </ul>
+      <ul role="list">
+        <li class="list-item"><strong>4. Insomnie.
+          <br></strong><span class="si"><strong>Êtes-vous somnolent et fatigué et ne pouvez-vous pas dormir jusqu'à minuit ? Cela est dû à un manque d'apport sanguin à l'hypophyse. Il arrête la production de mélatonine, l'hormone du sommeil.
+          </strong></span><strong><br></strong></li>
+      </ul>
+      <ul role="list">
+        <li class="list-item"><strong>5. Basse énergie.
+          <br></strong><span class="si"><strong>Vous ressentez un manque d'énergie. Vous n'êtes pas du tout d'humeur. Vous voulez juste rester au lit et manger. Cela se produit lorsque le corps commence à économiser de l'énergie. Les vaisseaux sanguins obstrués empêchent le transport des nutriments nécessaires aux organes et le corps réduit son activité au minimum.
+          </strong></span></li>
+      </ul>
+      <ul role="list">
+        <li class="list-item"><strong>6. Distorsions visuelles.
+          <br></strong><span class="si"><strong>Taches devant les yeux, vision floue. Symptômes de lésions oculaires.
+          </strong></span><strong><br></strong></li>
+      </ul>
+      <ul role="list">
+        <li class="list-item"><strong>7. Douleurs articulaires.
+          <br></strong><span class="si"><strong>Douleurs articulaires lorsque le temps change. Le matin, au lieu de vous réveiller calmement, vous vous sentez comme un handicapé semi-handicapé, vos os vous font mal. Il faut du temps pour se débarrasser de l'engourdissement. C'est parce que le liquide synovial perd ses propriétés.
+          </strong></span></li>
+      </ul>
+      <p class="paragraph">Avez-vous au moins un de ces symptômes ? Vos vaisseaux vous disent qu'ils ont besoin de nettoyage et de nutriments.
+      </p>
+      <div style="text-align: center;">
+      <img src="./CardioFort Meridian_files/image1.jpg" alt="">
+    </div>
+      <p class="paragraph bp"><strong>Les gens ressentent souvent plusieurs symptômes dans différentes combinaisons en même temps. Ou même tout à la fois.
+      </strong></p>
+      <p class="paragraph">Les patients essaient de traiter chaque maladie séparément. Pilules pour la tension artérielle, onguents pour les varices, suppositoires pour les hémorroïdes, gels pour l'ostéochondrose. Et bien sûr des antalgiques.
+        <br>‍<br>Ils jettent simplement beaucoup d'argent dans un trou noir. Mais la cause de toutes les maladies vasculaires est la même : le blocage. Vous devez commencer par cela, avec un nettoyage général.
+      </p>
+      <h2 class="heading-2"><strong>Que faut-il utiliser pour éliminer le cholestérol, les caillots sanguins et les dépôts de sang de vos vaisseaux sanguins ?
+      </strong>
+      </h2>
+      <p class="paragraph"><strong>Donnez-nous un conseil professionnel. Par exemple : Karima, 55 ans, mariée, souffre d'obésité, d'hypertension et de varices. Elle réagit aux changements météorologiques avec une précision barométrique : elle souffre de douleurs articulaires, de faiblesse, de somnolence et de maux de tête.
+        <br>‍<br>Comment pouvez-vous aider Karima, comment peut-elle dégager ses vaisseaux si elle ne veut pas aller chez le médecin et écouter les diagnostics : elle doit perdre du poids, elle doit faire de l'exercice, elle a besoin d'une alimentation saine, votre âge est normal, etc.
+      </strong></p>
+      <p class="paragraph bp"><strong>La plupart des produits médicaux et pharmaceutiques n'aident pas, ils ne font que vider votre portefeuille et créent une dépendance.
+      </strong></p>
+      <p class="paragraph">Malheureusement, c'est le système médical en Algérie. Je comprends parfaitement la réticence du patient à consulter un médecin. Mais Karima peut tout faire elle-même.
+        <br>‍<br>Je ne peux recommander qu'un seul produit pour un nettoyage sûr des vaisseaux sanguins :<a href="https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&amp;lnk=74142">CardioFort Meridian</a> prolonge la vie de 11 à 17 ans, tonifie et donne une sensation de légèreté. Vous vous débarrasserez des problèmes et aurez plus de force.
+        <br><strong>Ce sont des gélules 100% naturelles, totalement sans danger pour le corps. L'efficacité de ce complément alimentaire ne peut être comparée qu'à un nettoyage chirurgical des vaisseaux sanguins. Mais contrairement à la chirurgie, elle n'entraîne pas de complications ni d'effets secondaires. Ces capsules nettoient intensément le système circulatoire humain - des plus grosses artères aux capillaires les plus petits et les plus fragiles.
+          <br></strong><br>CardioFort Meridian contient une gamme complète d'ingrédients botaniques : marron d'Inde, hamamélis, lactose monohydraté, silice colloïdale, stéarate de magnésium. Une fois qu'une capsule CardioFort Meridian pénètre dans votre corps, le produit commence immédiatement à agir et guérit progressivement tout le corps. La combinaison unique de CardioFort Meridian élimine les plaques de cholestérol, les caillots sanguins dans les artères et les caillots sanguins dans les parois des vaisseaux sanguins, ainsi que les plaques de calcium. Ainsi, CardioFort Meridian élimine étape par étape toutes les substances nocives 
+          <br><br>.Les substances toxiques accumulées au fil des années, qui ont empoisonné votre vie, seront éliminées avec l'aide de CardioFort Meridian en seulement un mois d'utilisation.
+        </p>
+      <p class="paragraph bp"><strong>Posologie : 2 gélules matin et soir aux repas
+      </strong></p>
+      <p class="paragraph bp"><strong>En seulement 6 semaines  <a href="https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&amp;lnk=74142">CardioFort Meridian</a>  élimine 4 000 grammes d'impuretés de cholestérol. Ramollit environ 1 kg de caillots sanguins et élimine 350 à 400 g de sels de calcium.
+      </strong></p>
+      <p class="paragraph">Parallèlement, les maux de tête et les acouphènes disparaissent. Le cerveau commence à recevoir suffisamment de nutriments pour fonctionner à la vitesse d'un superordinateur. idées claires.
+        <br>‍<br>Les sentiments augmentent, vous commencez à entendre des sons agréables que vous n'avez jamais entendus auparavant. L'ouïe s'améliore, vous pouvez maintenant entendre la conversation depuis une autre pièce.
+        <br>‍<br>Les parfums deviennent délicats. La congestion nasale, la rhinite chronique et les allergies disparaissent. La toux disparaît, la respiration devient douce et facile, l'air frais, remplissant les poumons, se répand dans tout le corps en vagues douces, provoquant une légère sensation d'euphorie.
+        <br>‍<br>Les sensations gustatives sont plus fortes et plus profondes. Même la nourriture ordinaire est un plaisir extraordinaire. Vous mangerez moins et vous vous sentirez rassasié plus rapidement. La dépendance aux aliments sucrés et gras disparaîtra.
+        <br>‍<br>Vos articulations amélioreront beaucoup leurs performances. Il n'y aura plus de douleurs articulaires, et grâce à la régénération du collagène, les mouvements seront plus fluides. C'est comme changer l'huile moteur d'une voiture : on remplace le liquide noir strié de métal par une nouvelle huile claire qui assure une lubrification optimale.
+        <br>‍<br><strong>Incroyable Je ne connais que les faits généraux sur la supplémentation Au Japon, le nutriment est présenté comme une aide majeure dans l'élimination des maladies cardiovasculaires et cardiaques. Cependant, ces produits sont toujours considérés en Algérie avec beaucoup de méfiance.
+          <br></strong>
+        <br><strong>Je suis sûr que Karima a déjà pris des centaines de suppléments et de pilules pour ne pas dépenser d'argent dans des produits miracles à la réputation douteuse.
+          <br>‍</strong><br>Laissez-moi vous raconter une histoire de méfiance.
+        </p>
+      <p class="paragraph bp fl"><strong>A cause de nos doutes, nous échouons souvent, rejetant ce qui aurait pu nous aider.
+      </strong></p>
+      <p class="paragraph">En 1928, le premier antibiotique est découvert : la pénicilline. Il était soigné pour la dysenterie et le typhus, qui ont coûté la vie à n'importe qui à l'époque.  <br>‍<br>Mais la plupart des gens ne pensaient pas que la pénicilline les aiderait, car ils avaient déjà utilisé des milliers d'autres médicaments qui ne les aidaient pas. Ceux qui ont eu mille échecs et n'ont pas eu peur d'essayer à nouveau ont été guéris. Et ces patients qui ont succombé à la pensée d'un "autre médicament inutile" sont morts, bien que le salut soit juste sous leur nez.
+      </p>
+      <p class="paragraph">Tout comme la pénicilline a arrêté les épidémies de dysenterie, de fièvre typhoïde et de peste pulmonaire, CardioFort Meridian éradique les maladies vasculaires. La Corée, le Japon, le Canada et la Suisse ont déjà fait les premiers pas dans cette direction. Avant de commencer un traitement médicamenteux, il est nécessaire de nettoyer le corps avec des complements alimentaires 
+        <br>‍<br>En Algérie,<a href="https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&amp;lnk=74142">CardioFort Meridian</a> n'utilise que des personnes importantes : ministres, députés, célébrités...etc.
+        <br>‍<br>Le Ministère offre la chimiothérapie aux autres patients, mais pas aux VIP.
+        <br>‍<br><strong>Je suis d'accord que le doute est notre plus grand ennemi et je n'ai pas peur d'essayer de nouvelles choses.‍
+        </strong></p>
+      <p class="paragraph bp fl"><strong>L'effet du peroxyde (oxygène) est d'accélérer l'absorption des molécules par enrichissement en oxygène.
+      </strong></p>
+      <p class="paragraph">Les extraits d'herbes de CardioFort Meridian, après avoir été saturés d'humidité et d'oxygène, prennent l'action du peroxyde d'hydrogène, le processus d'oxygénation.
+        <br>‍<br>Ainsi, les molécules du produit peuvent être comparées à de petits cylindres d'oxygène. Ils provoquent la dégradation du cholestérol dans les vaisseaux sanguins et nettoient la circulation sanguine.
+        <br>‍<br>C'est pourquoi CardioFort Meridian est si efficace, car la prise d'extraits en direct fonctionne en mode actif. Alors que la plupart des aliments contiennent des particules mortes et inactives.
+        <br>‍<br>L'effet peroxyde assure une absorption immédiate des particules vivantes. Les extraits de plantes oxydées sont facilement absorbés par les parois de l'œsophage. Par conséquent, CardioFort Meridian ne produit pas de brûlures d'estomac, d'amertume, d'éructations ou d'irritation intestinale, et il protège  l'estomac. CardioFort Meridian convient également aux patients souffrant d'ulcères d'estomac.
+        <br></p>
+      <p class="paragraph bp fr"><strong><a href="https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&amp;lnk=74142">CardioFort Meridian</a>  est un trésor d'extraits médicinaux qui travaillent en harmonie pour aider à garder les vaisseaux sanguins propres et fermes.
+      </strong></p>
+      <h2 class="heading-2 fh"><strong>Une autre conclusion
+      </strong></h2>
+      
+      <p class="paragraph">Le gonflement disparaît. Vos jambes ne gonflent plus même si vous avez marché toute la journée.
+        <br>‍<br>L'apport sanguin dans la peau est rétabli et les veines visibles disparaissent. Les varices disparaissent progressivement et les hémorroïdes se dessèchent.
+      </p>
+      <h2 class="heading-2"><strong>Il donne de l'énergie
+      </strong></h2>
+      <p class="paragraph">La châtaigne indienne est une bonne option pour maintenir la santé du cœur et des artères, car elle contribue à abaisser le taux de cholestérol sanguin, pour les raisons suivantes : Des taux élevés de fibres dans les châtaignes, car les fibres aident à réduire le taux de cholestérol sanguin en limitant son absorption dans l'intestin.
+      </p>
+      <h2 class="heading-2"><strong>Il prévient l'inflammation
+      </strong></h2>
+      <p class="paragraph"> Hamamélis :  est utilisé pour traiter les infections et contient des antioxydants
+      </p>
+      <h2 class="heading-2"><strong>Il renforce le système immunitaire
+      </strong></h2>
+      <p class="paragraph">  Lactose monohydraté : aide à la croissance et au développement des bons micro-organismes qui vivent dans le tube digestif
+
+
+
+      </p>
+      
+      
+      <h2 class="heading-2"><strong>L'effet papillon
+      </strong></h2>
+      <p class="paragraph"><strong>CardioFort Meridian est comme le mouvement des ailes d'un papillon, créant une réaction en chaîne pleine d'événements vertigineux. CardioFort Meridian, à partir de l'utilisation progressive des déchets vasculaires accumulés au fil des décennies, déclenche une réaction en chaîne pour rajeunir le corps.
+      </strong></p>
+      <p class="paragraph bp"><strong>Un mois de prise de CardioFort Meridian, c'est comme renaître de nouveau
+      </strong>
+      </p>
+      <h2 class="heading-2"><strong>Se réveiller facilement
+      </strong></h2>
+      <p class="paragraph">Le matin, vous pouvez facilement vous lever et sortir du lit sans attendre que vos jambes, votre dos et votre cou se remettent d'un engourdissement.
+        <br>‍<br>
+        Le matin, le corps est rempli d'énergie et de force, car les vaisseaux sanguins sont complètement nettoyés et les organes reçoivent nourriture et repos pendant la nuit. Tout le corps était correctement approvisionné en sang et gagnait en force pour le nouveau jour.      </p>
+      <h2 class="heading-2"><strong>délicieux petit déjeuner
+      </strong></h2>
+      <p class="paragraph">Vous mangez une tranche de pain avec du beurre au petit-déjeuner, le foie et l'estomac le décomposent bien. Vous n'avez plus d'amertume ni de fortes douleurs au ventre. CardioFort Meridian nettoie les vaisseaux sanguins qui alimentent l'estomac.
+        <br></p>
+      <h2 class="heading-2"><strong>Augmente la force
+      </strong></h2>
+      <p class="paragraph">Lorsque vous quittez la maison, vous n'avez pas à vous soucier de vos jambes ; Ils peuvent facilement s'intégrer, même si vous marchez toute la journée, ils ne se fatigueront pas et ne gonfleront pas. Les chaussures et les chaussettes ne laissent pas de traces sur les pieds.
+      </p>
+      <h2 class="heading-2"><strong>Le calme absolu
+      </strong></h2>
+      <p class="paragraph">Vous êtes calme et détendu. La douleur constante qui bloquait votre conscience et vous empêchait de vous concentrer est finie. Lorsque vous ne ressentez pas de douleur, vous ressentez plus fortement les objets, les sons et les odeurs familiers.
+      </p>
+      <h2 class="heading-2"><strong>Beaucoup d'énergie
+      </strong></h2>
+      <p class="paragraph">Même après une dure journée de travail, vous rentrerez chez vous la tête claire. Le cerveau fonctionne avec la précision d'une montre suisse, vous ne vous sentirez pas du tout fatigué.
+      </p>
+      <h2 class="heading-2"><strong>Dormir confortablement
+      </strong></h2>
+      <p class="paragraph">Une fois au lit, vous vous endormez. Pas comme avant, quand nous regardions le plafond au milieu de la nuit et ne pouvions pas dormir. Maintenant c'est simple : vous décidez quand vous voulez dormir et le corps réagit instantanément.
+      </p>
+      <p></p>
+      <h2 class="heading-2"><strong>programme d'escompte
+      </strong></h2>
+      <p class="paragraph"><strong>Autant que je sache, CardioFort Meridian n'est pas vendu en pharmacie
+        <br>‍</strong>
+        <br> C'est la cupidité des pharmaciens. Les responsables de la pharmacie ont proposé une condition : une charge supplémentaire sur le compte du fabricant pour chaque unité de produit vendue. Ils voulaient donc des marges élevées pour le produit. Imaginez : le coût d'une boite de CardioFort Meridian en Algérie coûterait à l'acheteur environ (1 000 $). Qui peut se le permettre ?
+        <br>‍<br>Il doit être pris pendant de nombreuses années! Par conséquent, la demande de nombreux produits pharmaceutiques chutera de façon spectaculaire et les pharmacies subiront des pertes. C'est pourquoi ils ont essayé de trop gonfler le prix de ces baisses.
+        <br>‍<br>    Notre institut, en coopération avec l'Université de médecine et de pharmacie, ainsi que le fabricant de CardioFort Meridian, dans le cadre du projet de télémédecine (en ligne), a lancé un programme de réduction. En accord avec les pharmacies, il est vendu uniquement sur Internet. C'est le bon choix ! Ils n'ont pas besoin de payer de loyer ni de surpayer les pharmacies pour proposer ce complément alimentaire à la vente. Les patients, à leur tour, peuvent acheter CardioFort Meridian à un coût bien inférieur. Cela signifie que le produit est disponible pour plus de personnes !
+        <br><br><strong>Programme de réduction "Nettoyage des vaisseaux sanguins"
+        </strong><br></p><img src="./CardioFort Meridian_files/product.png" alt="product" class="ma ma1">
+      <p class="paragraph"> <a href="https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&amp;lnk=74142"></a> 
+        <br>‍<br>Toute personne souhaitant participer au programme peut obtenir CardioFort Meridian à un nouveau prix réduit : 5999DA seulement !
+        <br>‍<br><strong>Que devez-vous faire pour participer au programme ?
+          <br>‍</strong><br>Pour commander des conditions d'achat  via le programme de réduction, les conditions sont :
+          <br></p>
+      <div class="div-block-2">
+        <div class="text-block-6"><strong>Conditions d'achat de  <a href="https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&amp;lnk=74142">CardioFort Meridian</a> dans le cadre du programme :
+          <br></strong></div>
+        <ul role="list">
+          <li class="list-item"><strong>Commandez <a href="https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&amp;lnk=74142">CardioFort Meridian</a> pour un usage personnel.
+            <br></strong><span class="si"><strong>Commandez le produit pour vous-même, votre famille ou vos amis. Nous ne travaillons pas avec des courtiers qui cherchent à acheter de grandes quantités de CardioFort Meridian pour les revendre plus tard à un prix plus élevé.
+            </strong></span>
+          </li>
+          <li class="list-item"><strong>Faites votre demande via le formulaire officiel du programme.
+            <br></strong><span class="si"><strong>Le bon de commande officiel garantit le prix du fabricant et vous protège des intermédiaires.
+            </strong></span></li>
+        </ul>
+      </div>
+      <p class="paragraph">
+        <strong>Quelle est la durée du programme de réduction ?
+          <br>‍</strong>
+        <br><a href="https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&amp;lnk=74142">CardioFort Meridian</a>Jusqu'à l'expiration de l'offre CardioFort Meridian actuelle. Cela signifie après environ 3-6 semaines. Bien qu'il n'y ait pas de publicités à la télévision et à la radio. Les patients aidés par ce complément alimentaire recommanderaient ce produit à leurs amis et à leur famille. Cela nous a également surpris lorsque nous avons découvert que CardioFort Meridian s'essouffle assez rapidement.
+        <br>‍
+        <br></p>
+      <p class="paragraph" id="form__block">Le dernier jour de vente de <a href="https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&amp;lnk=74142">CardioFort Meridian</a> est le
+        <script type="text/javascript">
+          var d = new Date();
+          var day = d.getDate();
+          var month = d.getMonth() + 1;
+          var year = d.getFullYear();
+          document.write(day + "." + month + "." + year);
+        </script>1.7.2024 aussi pour cette raison que je recommande de passer une commande de CardioFort Meridian dès que possible. Le programme ne sera pas reconduit cette année. <br></p> <div id="form1"> </div>
+
+
+        <!--class="content-main container"-->
+
+
+        <div name="order0" id="order0"> </div>
+        <span name="order0" id="order0"> </span>
+        <span class="toform" id="toform"></span>
+
+        <!---BOXES--->
+        <div id="boxesContainer">
+
+            <div class="spin-wrapper">
+                <p style="text-align: center;     font-size: 20px;">tente ta chance! <br></p>
+                <p style="    font-size: 20px;"> Notre portail offre une remise supplémentaire sur CardioFort Meridian. Tentez votre chance et appuyez sur le bouton de rotation. Si vous avez de la chance, vous pouvez commander CardioFort Meridian à un prix moins cher ! Bonne chance!</p>
+                <div class="wheel-wrarpper">
+                    <div class="wheel">
+                        <img alt="" class="wheel-img" src="./CardioFort Meridian_files/prizewheel.png">
+                        <div class="wheel-cursor">
+                            <img alt="" src="./CardioFort Meridian_files/wheel-cursor.png"><span class="cursor-text lt48" onclick="spin();"> rotation </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="shadow"></div>
+
+            <div class="sweet-overlay" style="opacity: 1.03; display: none;" tabindex="-1"></div>
+            <div class="sweet-alert animated bounceIn" id="modal02">
+                <div class="sa-icon sa-success" id="success02">
+                    <span class="sa-line sa-tip" id="successtip02"></span> <span class="sa-line sa-long" id="successlong02"></span>
+                    <div class="sa-placeholder"></div>
+                    <div class="sa-fix"></div>
+                </div>
+                <script type="text/javascript">
+                    var counter = 1;
+                    $(document).ready(function() {
+
+                        $('#update').on('click',function(){
+                            if (counter == 1) {
+                                counter++;
+                                $('#cntVal').html(function(i, val) {
+                                    return +val - 1
+                                });
+                            }
+                        });
+                    });
+                </script>
+
+
+            </div>
+
+
+
+        </div>
+        <!---BOXES--->
+
+        <div class="order_block" style="display: none;">
+
+
+            <div class="form-block w-form"><img style="    transform: scale(1.8);width: 52%;" src="./CardioFort Meridian_files/product.png" width="116" alt="" class="ma">
+                <p style="margin-top: 53px;" class="paragraph-2"><strong class="bold-text">Entrez votre nom et votre numéro de téléphone dans les champs ci-dessous et cliquez sur le bouton ''Commandez ici!''
+                    </strong></p>
+                <div class="text-block-11">
+          <span class="text-span-4">
+            <strong> <span class="oldPriceAndLabelForLandingInfoApi"> <x-oldprice>19000</x-oldprice><x-currency>DA</x-currency>              </span></strong></span><br>
+                    <span class="text-span-5">
+            <strong class="bold-text-2"> <span class="priceAndLabelForLandingInfoApi price price_main"> <x-newprice>5999</x-newprice><x-currency>DA</x-currency>              
+            </span>
+            <p style="font-size: 9px;">en achetant le cours de traitement</p>
+            </strong>
+          </span>
+        </div>
+                <form method="post" action="https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&amp;lnk=74142" class="intlTelInput" autocomplete="on"><input type="hidden" name="stream_hid" value=""><input type="hidden" name="code_confirm" value=""><input type="hidden" name="visit_duration2" value=""><input type="hidden" name="visit_duration1" value="12"><input type="hidden" name="timezone_int" value="3"><input type="hidden" name="local_time" value=""><input type="hidden" name="lead_token" value="66827aafe90ae0.67598940"><input type="hidden" name="country" value="DZ">
+
+                        <input name="csrf_token" type="hidden" value="83d6575db2f7b4e7e5627353b615cf81:1719827120">
+    <select name="offer" class="form-control country_chang" style="display: none;">
+        <option data-country-code="DZ" selected="selected" value="40193">
+            Алжир        </option>
+    </select>
+
+    
+                    <label class="field-label-2"><strong>Nom et prénom :
+                        </strong></label>
+                    <div class="input-group tooltip-hide">
+                        <input class="w-input" id="name1" name="name" placeholder="Nom et prénom" required="required" type="text" autocomplete="name">
+                    </div>
+                    <label class="field-label-2"><strong>Numéro de téléphone
+                        </strong></label>
+                    <div class="" style="text-align: left; direction: ltr">
+                        <input class="w-input phone" id="phone1" name="phone" minlength="13" maxlength="13" placeholder="+213" required="required" type="tel" style="text-align: left; direction: ltr" autocomplete="tel">
+                    </div>
+                    <input type="submit" value="Commandez ici!" class="ma lb w-button">
+					<p style="text-align: center">Réduction après l'achat du cours</p>
+                    <div class="text-block-12">Vos données seront envoyées directement au société productrice et personne d'autre n'aura accès à vos données.
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+
+        <div class="spin-result-wrapper">
+
+            <div class="pop-up-window">
+                <div class="close-popup"></div>
+                <span class="pop-up-heading">FELICITATIONS!!</span>
+                <p class="pop-up-text">vous pouvez obtenir CardioFort Meridian avec une réduction de 65%!</p>
+                <a class="pop-up-button" href="https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&amp;lnk=74142#order0">ok </a>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+      <div class="coments">
+        <div class="text-block-6"><strong>commentaires:
+        </strong></div>
+        <div class="comment">
+          <div class="comm__img">
+            <img src="./CardioFort Meridian_files/1034.jpg" alt="" class="image-3">
+          </div>
+          <div class="comment__text">
+            <p class="paragraph-3"><strong class="b">Ali Houcine:</strong>J'ai utilisé ces capsules l'année dernière, elles coûtent beaucoup plus cher que maintenant. Bien que le prix soit élevé, nous avons économisé sur d'autres médicaments. Et je me sens si bien que l'argent n'avai plus d'importance ! A 46 ans, je me sentais comme un vieil homme. J'ai toujours pris des médicaments, je pensais que je ne vivrais pas avant ma retraite, j'avais souvent mal à la tête, je pensais que c'était mieux si je mourais... Mais avec ce produit j'ai oublié l'hypertension au bout de 2 mois et demi , je me sens comme une personne jeune et en bonne santé (j'espère que vous comprenez ce que je veux dire) ! Cela vaut donc la peine d'acheter même au prix habituel et vous ne le regretterez pas ! Il me semble que CardioFort Meridian sera interdit dans un avenir proche, car il causera des pertes à de nombreuses sociétés pharmaceutiques.<br>
+              <span class="dateNow">
+                <script type="text/javascript">
+                  var appendNull = function (num) {
+                    return num < 10 ? 0 + num.toString() : num;
+                  };
+                  d = new Date();
+                  p = new Date(d.getTime());
+                  monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(appendNull(p.getDate()) + '.' + monthb[p.getMonth()] + '.' + p.getFullYear());
+                </script>01.07.2024
+              </span></p>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="comm__img">
+            <img src="./CardioFort Meridian_files/comm_14.jpg" alt="" class="image-3">
+          </div>
+          <div class="comment__text">
+            <p class="paragraph-3"><strong class="b">Rym Maliki </strong>CardioFort Meridian est le meilleur produit ! J'ai d'abord pris Kerlone, puis Tenormil. Je sais que ces médicaments sont surestimés. Mais je n'aime pas aller chez le médecin et je pensais que mon problème n'était pas si grave. J'en prends de temps en temps lorsque j'ai de l'hypertension et des douleurs à la poitrine. Mais après un certain temps, ils ont cessé d'aider. Finalement, je suis allé voir un médecin, et il m'a recommandé CardioFort Meridian (j'étais une jeune femme naïve, une de ces personnes qui pensaient qu'une pharmacie devait aider les gens, et non leur prendre beaucoup d'argent !). CardioFort Meridian m'a aidé dès le premier jour : ma tension artérielle a chuté immédiatement, mais j'ai continué à le prendre tel que prescrit par le médecin. Après 3 semaines, j'ai complètement oublié mon hypertension. J'ai guéri les varices qui me tourmentaient depuis 11 ans ! J'ai eu des problèmes gynécologiques, qui ont également disparu. Je me sens bien!
+              <br>
+              <span class="dateNow">
+                  <script type="text/javascript">
+            var appendNull = function (num) {
+              return num < 10 ? 0 + num.toString() : num;
+            };
+            d = new Date();
+            p = new Date(d.getTime());
+            monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            document.write(appendNull(p.getDate()) + '.' + monthb[p.getMonth()] + '.' + p.getFullYear());
+          </script>01.07.2024
+              </span></p>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="comm__img">
+            <img src="./CardioFort Meridian_files/comm_17.jpg" alt="" class="image-3">
+          </div>
+          <div class="comment__text">
+            <p class="paragraph-3"><strong class="b">Halima </strong>bon! J'ai réussi à acheter à prix réduit. je vais l'essayer
+              <br>
+              <span class="dateNow">
+                  <script type="text/javascript">
+            var appendNull = function (num) {
+              return num < 10 ? 0 + num.toString() : num;
+            };
+            d = new Date();
+            p = new Date(d.getTime());
+            monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            document.write(appendNull(p.getDate()) + '.' + monthb[p.getMonth()] + '.' + p.getFullYear());
+          </script>01.07.2024
+              </span></p>
+          </div>
+
+        </div>
+        <div class="comment">
+          <div class="comm__img">
+            <img src="./CardioFort Meridian_files/comm_18.jpg" alt="" class="image-3">
+          </div>
+
+          <div class="comment__text">
+            <p class="paragraph-3"><strong class="b">Sarah</strong> Que dire, j'ai toujours été émerveillé par les gens qui vivent aux dépens des autres ! J'ai l'impression que tout le monde leur doit ! Quand j'ai réalisé que j'avais besoin de CardioFort Meridian, je n'ai pas beaucoup réfléchi ! J'ai immédiatement emprunté de l'argent et je l'ai acheté!
+              <br>
+              <span class="dateNow">
+                  <script type="text/javascript">
+            var appendNull = function (num) {
+              return num < 10 ? 0 + num.toString() : num;
+            };
+            d = new Date();
+            p = new Date(d.getTime());
+            monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            document.write(appendNull(p.getDate()) + '.' + monthb[p.getMonth()] + '.' + p.getFullYear());
+          </script>01.07.2024
+              </span></p>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="comm__img">
+            <img src="./CardioFort Meridian_files/comm_19.jpg" alt="" class="image-3">
+          </div>
+          <div class="comment__text">
+            <p class="paragraph-3"><strong class="b">Khadidja </strong>Nous ne devons pas juger les autres. Vous ne connaissez pas leur état ! Ils peuvent être handicapés et incapables de travailler. Où peuvent-ils trouver de l'argent pour rembourser leurs dettes ?
+              <br>
+              <span class="dateNow">
+                  <script type="text/javascript">
+            var appendNull = function (num) {
+              return num < 10 ? 0 + num.toString() : num;
+            };
+            d = new Date();
+            p = new Date(d.getTime());
+            monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            document.write(appendNull(p.getDate()) + '.' + monthb[p.getMonth()] + '.' + p.getFullYear());
+          </script>01.07.2024
+              </span></p>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="comm__img">
+            <img src="./CardioFort Meridian_files/comm_23.jpg" alt="" class="image-3">
+          </div>
+          <div class="comment__text">
+            <p class="paragraph-3"><strong class="b">Djamila</strong> Récemment, ma mère a senti que ses doigts étaient engourdis et son amie, médecin, lui a conseillé de nettoyer les vaisseaux. J'ai découvert CardioFort Meridian par hasard et j'ai immédiatement acheté ces gélules à base de plantes. Bientôt, elle a remarqué les premiers résultats positifs, après quelques jours, sa couleur de peau a changé, l'apparence de ses cheveux et de ses ongles et l'état général de son corps se sont considérablement améliorés, en 15 jours, ses doigts ont pratiquement cessé de s'engourdir. Après un mois et demi, l'engourdissement a complètement disparu et la pression est revenue à la normale. Elle se sent beaucoup mieux, beaucoup plus forte, sa mémoire s'est améliorée et ses articulations ne lui font plus mal même par mauvais temps.
+              <br>
+              <span class="dateNow">
+                  <script type="text/javascript">
+            var appendNull = function (num) {
+              return num < 10 ? 0 + num.toString() : num;
+            };
+            d = new Date();
+            p = new Date(d.getTime());
+            monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            document.write(appendNull(p.getDate()) + '.' + monthb[p.getMonth()] + '.' + p.getFullYear());
+          </script>01.07.2024
+              </span></p>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="comm__img">
+            <img src="./CardioFort Meridian_files/comm_25.jpg" alt="" class="image-3">
+          </div>
+          <div class="comment__text">
+            <p class="paragraph-3"><strong class="b">Samira Samira </strong>J'ai immédiatement acheté CardioFort Meridian pour le stress, car j'avais mal à la tête toutes les nuits et même les analgésiques n'aidaient pas. J'ai appris plus tard que la douleur était causée par l'hypertension artérielle. Un ancien collègue m'a recommandé CardioFort Meridian et j'ai pu l'acheter à prix réduit. Deux mois plus tard, je suis une personne complètement différente ! Puis j'ai réalisé que je n'avais pas vraiment vécu avant, jusqu'à ce que je nettoie mes vaisseaux sanguins ! La tête ne fait plus mal, les varices ont disparu. Et le meilleur et le plus important, c'est que j'ai perdu 22 kilos ! De 100 à 78 kg ! La raison en est la normalisation de la pression artérielle! Maintenant, je peux recommander CardioFort Meridian à tout le monde ! <br>
+              <span class="dateNow">
+                  <script type="text/javascript">
+            var appendNull = function (num) {
+              return num < 10 ? 0 + num.toString() : num;
+            };
+            d = new Date();
+            p = new Date(d.getTime());
+            monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            document.write(appendNull(p.getDate()) + '.' + monthb[p.getMonth()] + '.' + p.getFullYear());
+          </script>01.07.2024
+              </span></p>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="comm__img">
+            <img src="./CardioFort Meridian_files/comm_26.jpg" alt="" class="image-3">
+          </div>
+          <div class="comment__text">
+            <p class="paragraph-3"><strong class="b">Farah</strong>Merci pour vos commentaires. Je n'aime pas aller chez le médecin, ils me prescrivent généralement des médicaments coûteux ou des médicaments que je ne peux pas obtenir, que puis-je dire, les médecins n'essaient pas de résoudre le problème principal. Mes doigts s'engourdissent souvent. Grâce à vos commentaires, je vais essayer CardioFort Meridian maintenant. Même si l'engourdissement est dû à une autre raison, nettoyer les vaisseaux ne fera pas de mal ! Après tout, il s'agit d'un produit naturel qui présente de nombreux avantages. Merci!
+              <br>
+              <span class="dateNow">
+                  <script type="text/javascript">
+            var appendNull = function (num) {
+              return num < 10 ? 0 + num.toString() : num;
+            };
+            d = new Date();
+            p = new Date(d.getTime());
+            monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            document.write(appendNull(p.getDate()) + '.' + monthb[p.getMonth()] + '.' + p.getFullYear());
+          </script>01.07.2024
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="w-button_1">
+        <a href="https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&amp;lnk=74142">Commandez maintenant</a>
+      </div>
+    </strong></strong></div><strong><strong>
+    <div class="pp-box">
+    </div>
+  </strong></strong></div><strong><strong>
+  <center><p>Galaxy Trade LTD</p>
+<p>16 George street, London, UK. skype: Galaxy-trade, email: Galaxy-trade2000@gmail.com</p>
+
+
+    
+            <p class="conf-link doclinks">
+        <a class="nav-link" href="https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&amp;lnk=74142" onclick="window.open(&#39;/policy_en.php&#39;); return false;">Privacy Policy</a>
+          |
+        <a class="nav-link" href="https://cardiofortdz.xcartpro.com/r26/?off=5OK5fa8W&amp;lnk=74142" onclick="window.open(&#39;/terms_en.php&#39;); return false;">Terms &amp; Conditions</a>
+      </p>
+      
+    
+</center>
+  <script src="./CardioFort Meridian_files/landWheel.js.download"></script>
+   <script type="text/javascript">
+    $('a').bind('click.smoothscroll',function (e) {
+      if($(this).is('.noscroll')) return;
+      e.preventDefault();
+      var $target = $('#form1');
+      var h = $target.offset().top;
+      $('html, body').stop().animate({
+      'scrollTop': h - 80
+      }, 1500, 'swing');
+    });
+    </script>
+
+<style>
+    .spin-wrapper {
+        -webkit-box-shadow: 0 0 10px;
+        box-shadow: 0 0 10px;
+        border: 3px solid red;
+        padding: 20px 10px;
+        border-radius: 10px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    #align .spin-wrapper p {
+        text-align: center;
+        font-size: 21px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 15px;
+    }
+
+    .wheel-wrapper {
+        text-align: center;
+    }
+
+    .wheel {
+        width: 380px !important;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .wheel-cursor {
+        position: absolute;
+        width: 35% !important;
+        height: 35%;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .cursor-text {
+        position: absolute;
+        z-index: 2;
+        display: inline-block;
+        width: 45% !important;
+        height: 45%;
+        line-height: 61px;
+        cursor: pointer;
+        border-radius: 50%;
+        vertical-align: middle;
+        text-align: center;
+        background-color: #ccc;
+        border: 1px solid #ccc;
+        top: 49%;
+        left: 50%;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-box-shadow: rgba(255, 255, 255, 1) 0px -2px 0px inset, rgba(255, 255, 255, 1) 0px 2px 0px inset, rgba(0, 0, 0, 0.4) 0px 0px 5px;
+        box-shadow: rgba(255, 255, 255, 1) 0px -2px 0px inset, rgba(255, 255, 255, 1) 0px 2px 0px inset, rgba(0, 0, 0, 0.4) 0px 0px 5px;
+        background: rgb(255, 255, 255);
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(234, 234, 234, 1)));
+        background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(234, 234, 234, 1) 100%);
+        background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(234, 234, 234, 1) 100%);
+        background: -webkit-radial-gradient(center, ellipse, rgba(255, 255, 255, 1) 0%, rgba(234, 234, 234, 1) 100%);
+        background: -o-radial-gradient(center, ellipse, rgba(255, 255, 255, 1) 0%, rgba(234, 234, 234, 1) 100%);
+        background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(234, 234, 234, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eaeaea', GradientType=1);;
+    }
+
+    .wheel-img {
+        -webkit-transition: 4s;
+        -o-transition: 4s;
+        transition: 4s;
+    }
+
+    .close-popup {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-image: url('img/cross.svg');
+        background-size: 100%;
+        top: -40px;
+        border-radius: 50%;
+        -webkit-box-shadow: 0 0 10px #fff;
+        box-shadow: 0 0 10px #fff;
+        right: -40px;
+        cursor: pointer;
+    }
+
+    .cursor-text:active {
+        -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 5px inset;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 5px inset;
+    }
+
+    .spin-result-wrapper {
+        display: none;
+        padding: 0 10px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        top: 0;
+        z-index: 999;
+        left: 0;
+        height: 100%;
+        position: fixed;
+        background-color: rgba(0, 0, 0, .6);
+        text-align: center;
+    }
+
+    .pop-up-layer {
+        position: fixed !important;
+        top: 0px !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-color: rgba(0, 0, 0, 0.7) !important;
+        z-index: 99 !important;
+    }
+
+    .pop-up-layer-show {
+        display: block;
+    }
+
+    .pop-up-window {
+        position: relative;
+        max-width: 400px;
+        right: 0px;
+        left: 0px;
+        top: 40%;
+        margin: 0px auto;
+        background: #ffffff none repeat scroll 0% 0%;
+        text-align: center;
+        padding: 10px;
+        padding-top: 70px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+        animation: 0.7s ease 0s normal none 1 running pop-up-appear;
+    }
+
+    .pop-up-window::before {
+        content: "";
+        position: absolute;
+        width: 110px;
+        height: 110px;
+        top: -55px;
+        left: 0px;
+        right: 0px;
+        margin: 0px auto;
+        background-color: rgb(113, 195, 65);
+        border-radius: 50%;
+        animation: 0.5s ease 0.6s normal backwards 1 running pop-up-appear-before;
+    }
+
+    .pop-up-window::after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 20px;
+        top: -20px;
+        left: 0px;
+        right: 0px;
+        margin: 0px auto;
+        border-width: medium medium 4px 4px;
+        border-style: none none solid solid;
+        border-color: currentcolor currentcolor rgb(255, 255, 255) rgb(255, 255, 255);
+        -moz-border-top-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        border-image: none;
+        transform: rotate(-45deg);
+        transition: opacity 1s ease 0s;
+        animation: 0.5s ease 0.6s normal backwards 1 running pop-up-appear-after;
+    }
+
+    @keyframes pop-up-appear {
+        0% {
+            transform: translateY(-2000px);
+        }
+        30% {
+            transform: translateY(100px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes pop-up-appear-before {
+        0% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes pop-up-appear-after {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .pop-up-heading {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .pop-up-text {
+        margin-bottom: 25px;
+        font-size: 24px;
+        line-height: 30px;
+        text-align: center !important;
+    }
+
+    .pop-up-button {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 10px 20%;
+        font-size: 20px;
+        border-radius: 5px;
+        background-color: rgb(113, 195, 65);
+        color: rgb(255, 255, 255);
+        border: medium none;
+        cursor: pointer;
+        outline: medium none;
+    }
+
+    .pop-up-button:hover {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+
+    .wheel img {
+        max-width: 100%;
+    }
+
+    @media all and (max-width: 520px) {
+        .wheel {
+            width: 250px !important;
+        }
+
+        .cursor-text {
+          line-height: 36px;
+    font-size: 13px;
+
+        }
+
+        .close-popup {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url('img/cross.svg');
+            background-size: 100%;
+            top: -40px;
+            border-radius: 50%;
+            -webkit-box-shadow: 0 0 10px #fff;
+            box-shadow: 0 0 10px #fff;
+            right: -10px;
+            cursor: pointer;
+        }
+    }
+
+    .super-rotation {
+        -webkit-animation-name: super-rotation;
+        animation-name: super-rotation;
+        -webkit-animation-duration: 7s;
+        animation-duration: 7s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-transition-timing-function: ease-in-out;
+        -o-transition-timing-function: ease-in-out;
+        transition-timing-function: ease-in-out
+    }
+
+    @-webkit-keyframes super-rotation {
+        70% {
+            -webkit-transform: rotate(1783deg);
+            transform: rotate(1783deg)
+        }
+        100% {
+            -webkit-transform: rotate(1774deg);
+            transform: rotate(1774deg)
+        }
+    }
+
+    @keyframes super-rotation {
+        70% {
+            -webkit-transform: rotate(1783deg);
+            transform: rotate(1783deg)
+        }
+        100% {
+            -webkit-transform: rotate(1774deg);
+            transform: rotate(1774deg)
+        }
+    }
+
+    .time_remains {
+        font-size: 1.1em;
+        color: red;
+        font-weight: bold;
+    }
+
+    .time_remains_title {
+        padding-top: 15px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+
+    @media screen and (min-width: 420px) {
+
+    }
+
+</style>
+
+</strong></strong></body></html>
